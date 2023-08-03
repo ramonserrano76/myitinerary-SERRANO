@@ -1,0 +1,19 @@
+/* Section.css */
+.section-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.section-content {
+    font-size: 14px;
+    color: #555;
+}

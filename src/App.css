@@ -1,42 +1,37 @@
-#root {
-  max-width: 1280px;
+/* App.css */
+
+/* Estilos para el contenedor principal de la aplicación */
+.app-container {
+  padding: 20px;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Estilos para el encabezado de la aplicación */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app-title {
+  font-size: 28px;
+  color: #333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Estilos para el contenido principal de la aplicación */
+.app-content {
+  font-size: 16px;
+  color: #555;
 }
 
-.card {
-  padding: 2em;
+/* Estilos para el enlace de navegación en el encabezado */
+.app-link {
+  color: #007bff;
+  text-decoration: none;
 }
 
-.read-the-docs {
-  color: #888;
+.app-link:hover {
+  text-decoration: underline;
 }
