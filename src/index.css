@@ -1,17 +1,26 @@
 /* index.css */
 
 /* Estilos globales */
-body {
+
+html,
+body,
+#app {  
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  
 }
 
 /* Estilos para el contenedor principal */
 #app {
-  display: flex;
+  display: unset;
   flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
+  align-items: center;  
   background-color: #f8f8f8;
+  min-width: 100vw;
+}
+
+.app-container {
+  width: 100%;
+  /* Agrega otros estilos para el contenedor principal si es necesario */
 }
