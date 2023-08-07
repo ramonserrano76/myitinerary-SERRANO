@@ -1,25 +1,16 @@
 /* Estilos para la barra de navegación */
-nav {
-    background-color: #333;
-    padding: 0px 0px;
-    color: #fff;
-    margin-right: 0px;
-    margin-left: 0px;
+
+/* Estilos para la barra de navegación */
+.bg-transparent {
+    background-color: transparent !important;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
+.position-relative {
+    position: absolute !important;
+    /* Asegúrate de que el Navbar tenga un position */
 }
 
-nav li {
-    margin-right: 0px;
+.navbar {
+    z-index: 1000;
+    /* Ajusta el z-index para que esté por encima del contenido del hero */
 }
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-}
-

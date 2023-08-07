@@ -4,23 +4,28 @@
 
 html,
 body,
-#app {  
+#root {  
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  
+  box-sizing: border-box;
+  width: 100%;
 }
 
 /* Estilos para el contenedor principal */
-#app {
+#root {
   display: unset;
   flex-direction: column;
   align-items: center;  
   background-color: #f8f8f8;
   min-width: 100vw;
+  min-height: 100vh;
 }
 
 .app-container {
   width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  min-width: 100vw;
   /* Agrega otros estilos para el contenedor principal si es necesario */
 }
