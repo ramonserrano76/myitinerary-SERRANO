@@ -15,9 +15,29 @@
         "description": "Humahuaca Ravine, Jujuy"
     },
     {
-        "imageUrl": "https://images.pexels.com/photos/17501083/pexels-photo-17501083/free-photo-of-punto-de-referencia-estados-unidos-valle-religion.jpeg?auto=compress&cs=tinysrgb&w=600",
-        "title": "JAPAN",
-        "description": "Byodo-In Temple, Uji, Kioto"
+        "imageUrl": "https://media.istockphoto.com/id/869741554/es/foto/glaciar-y-lago-%C3%BAnico.jpg?s=612x612&w=0&k=20&c=bPtN4yn_jXZUqx_ezqqfXVw_2xIXm0ykL6MobcQiEKI=",
+        "title": "ARGENTINA",
+        "description": "Perito Moreno Glacier, El Calafate"
+    },
+    {
+        "imageUrl": "https://media.istockphoto.com/id/475124388/es/foto/white-church-en-la-ciudad-de-oia-en-la-isla-de-santorini-grecia.jpg?s=612x612&w=0&k=20&c=g4KEhVLC3CldeuFK_ki_Z9Nt60NHQRmtEtcHamUvGO4=",
+        "title": "GRECEE",
+        "description": "Santorini Island"
+    },
+    {
+        "imageUrl": "https://media.istockphoto.com/id/1186175170/es/foto/bali-indonesia-traveler-on-tree-house-en-diamond-beach-en-nusa-penida-island.jpg?s=612x612&w=0&k=20&c=ynS6L2ylYm8p_EBr7B328osKaWuO9zQ0tWckgKLD6_I=",
+        "title": "INDONESIA",
+        "description": "Nusa Penida Island"
+    },
+    {
+        "imageUrl": "https://media.istockphoto.com/id/1133449890/es/foto/tour-eiffel-y-paisaje-urbano-de-par%C3%ADs.jpg?s=612x612&w=0&k=20&c=DutLoH8kvbitNtHiT-4JT7zslHHjcs3lq9Ud78lLneU=",
+        "title": "FRANCE",
+        "description": "Eiffel Tower, Paris"
+    },
+    {
+        "imageUrl": "https://media.istockphoto.com/id/1169074379/es/foto/la-estatua-de-la-libertad-con-el-edificio-one-world-trade-se-centra-sobre-el-r%C3%ADo-hudson-y-el.jpg?s=612x612&w=0&k=20&c=xpiIDmtoWs1cFyXB_U2AFP-JYXxmMb4F3rgTpaV7pJc=",
+        "title": "UNITED STATES OF AMERICA",
+        "description": "New York City"
     },
     {
         "imageUrl": "https://images.pexels.com/photos/13558679/pexels-photo-13558679.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -38,25 +58,6 @@
         "imageUrl": "https://images.pexels.com/photos/8242973/pexels-photo-8242973.jpeg?auto=compress&cs=tinysrgb&w=600",
         "title": "ARGENTINA",
         "description": "Iguazu Falls, Devil's Throat"
-    },
-    {
-        "imageUrl": "https://media.istockphoto.com/id/869741554/es/foto/glaciar-y-lago-%C3%BAnico.jpg?s=612x612&w=0&k=20&c=bPtN4yn_jXZUqx_ezqqfXVw_2xIXm0ykL6MobcQiEKI=",
-        "title": "ARGENTINA",
-        "description": "Perito Moreno Glacier, El Calafate"
-    },
-    {
-        "imageUrl": "https://images.pexels.com/photos/4365100/pexels-photo-4365100.jpeg?auto=compress&cs=tinysrgb&w=600",
-        "title": "ISRAEL",
-        "description": "Old Ornamental Cupule, Islamic Mosque"
-    },
-    {
-        "imageUrl": "https://images.pexels.com/photos/753339/pexels-photo-753339.jpeg?auto=compress&cs=tinysrgb&w=600",
-        "title": "RUSSIA",
-        "description": "The Minin and Pozharsky Monument, Moscow"
-    },
-    {
-        "imageUrl": "https://images.pexels.com/photos/723023/pexels-photo-723023.jpeg?auto=compress&cs=tinysrgb&w=600",
-        "title": "ITALY",
-        "description": "Filicudi Island Cave, Tyrrhenian Sea"
     }
+    
 ]
