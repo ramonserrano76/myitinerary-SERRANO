@@ -27,12 +27,10 @@ const Cities = () => {
                                     </Form>
                                 </div>
                             </div>
-                        </div>
-                        <div className='position-relative'></div>
-                    </div>
-                    
+                        </div>                        
+                    </div>                    
                 </div>
-                <Carrousel />
+                
                 {/* Renderize any component here */}
                 {/* <Carrousel /> */}
             </div>

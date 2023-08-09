@@ -1,9 +1,9 @@
 /* carrousel.css */
-.carousel-container{
+.carousel-container {
     min-height: 30vh;
-    margin-bottom: 0px;
-    padding-bottom: 0;
-    min-width: 100vw;
+    display: flex;
+    margin-top: 140px;   
+    padding-bottom: 0;    
 }
 .position-relative {
     position: relative;

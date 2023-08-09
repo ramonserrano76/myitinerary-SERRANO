@@ -1,0 +1,22 @@
+/* Layoutmain.css */
+
+/* Estilos para el contenedor principal del layout */
+.my-layout-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Estilos para el contenido principal dentro del layout */
+.flex-grow-1 {
+    flex-grow: 1;
+}
+
+/* Estilos opcionales para Navbarmain y Footer si es necesario */
+/* .navbarmain {
+  // Estilos para el Navbar
+}
+
+.footer {
+  // Estilos para el Footer
+} */
