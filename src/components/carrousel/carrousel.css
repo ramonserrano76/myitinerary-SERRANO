@@ -2,7 +2,7 @@
 .carousel-container {
     /* min-height: 30vh; */
     min-width: auto;
-    display:  ;
+    display: flex;
     margin-top: 140px;   
     padding-bottom: 0;    
 }
