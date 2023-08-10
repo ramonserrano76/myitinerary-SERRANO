@@ -1,15 +1,16 @@
 /* carrousel.css */
 .carousel-container {
-    min-height: 30vh;
-    display: flex;
+    /* min-height: 30vh; */
+    min-width: auto;
+    display:  ;
     margin-top: 140px;   
     padding-bottom: 0;    
 }
 .position-relative {
-    position: relative;
+    position: relative !important;
 }
 .position-absolute {
-    position: absolute!important;
+    position: absolute !important;
 }
 
 .overlay-text {

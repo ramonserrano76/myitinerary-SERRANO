@@ -1,8 +1,8 @@
 // Layoutmain.jsx
-
 import React from 'react';
 import NavbarMain from '../../components/navbarmain/NavbarMain.jsx';
 import Footer from '../../components/footer/Footer.jsx';
+import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap styles
 import '../Layoutmain/layoutmain.css';
 const Layout = ({ children }) => {
     return (
@@ -13,5 +13,4 @@ const Layout = ({ children }) => {
         </div>
     );
 };
-
 export default Layout;
