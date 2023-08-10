@@ -27,3 +27,14 @@
     color: white;
     padding: 10px;
 }
+
+/* Cambiar el color de la flecha en estado hover */
+.carousel-control-prev-icon:hover {
+    filter: brightness(1.5);
+    /* Ajusta el brillo para hacerla más blanca */
+}
+
+.carousel-control-next-icon:hover {
+    filter: brightness(1.5);
+    /* Ajusta el brillo para hacerla más blanca */
+}
