@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
     return (
         <div className='my-layout-container'>
             <NavbarMain />
-            <main className="flex-grow-1">{children}</main>
+            <main className="flex-grow-1 wrapper">{children}</main>
             <Footer />
         </div>
     );
