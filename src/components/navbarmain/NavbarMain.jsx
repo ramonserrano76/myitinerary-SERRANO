@@ -23,11 +23,11 @@ const NavbarMain = () => {
                     </Form> */}
                     {/* Opciones de navegación */}
                     <Nav className="ms-auto my-1 my-lg-0 justify-content-center align-itens.center">
-                        <Nav.Link as={Link} to="/home" className="btn btn-outline-primary">Home{' '}<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                        <Nav.Link as={Link} to="/home" className="btn btn-outline-primary">Home{' '}<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-home">
                             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z" />
                             <polyline points="9 22 9 12 15 12 15 22" />
                         </svg></Nav.Link>
-                        <Nav.Link as={Link} to="/cities" className="btn btn-outline-primary">Cities{' '}<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin">
+                        <Nav.Link as={Link} to="/cities" className="btn btn-outline-primary">Cities{' '}<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-map-pin">
                             <path d="M12 0c-5.25 0-9.5 4.25-9.5 9.5 0 6 8.5 13.5 9.5 14.5 1-1 9.5-8.5 9.5-14.5 0-5.25-4.25-9.5-9.5-9.5zm0 13a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" />
                         </svg></Nav.Link>
                         <Nav.Link href="#login" className="btn btn-outline-primary">Login{' '}<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" className="bi bi-person-circle" viewBox="0 0 24 24">

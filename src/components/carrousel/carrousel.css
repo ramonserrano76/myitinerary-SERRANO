@@ -1,6 +1,6 @@
 /* carrousel.css */
 .carousel-container {
-    /* min-height: 30vh; */
+    justify-content: center;
     min-width: auto;
     display: flex;
     margin-top: 140px;   
@@ -37,4 +37,8 @@
 .carousel-control-next-icon:hover {
     filter: brightness(1.5);
     /* Ajusta el brillo para hacerla más blanca */
+}
+
+.transparent-bg {
+    background-color: transparent;
 }

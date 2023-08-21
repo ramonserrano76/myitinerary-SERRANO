@@ -1,15 +1,15 @@
 /* Footer.css */
 footer {  
-    position: sticky;
+   
     bottom: 0;
     color: #fff;
     padding: 0px;
-    margin: 0px;    
+    margin: 10px;    
     text-align: center;
     align-items: center;
     
     min-width: 100vw;
     width: 100%;
-    flex-grow: 1;
+    
 }
 

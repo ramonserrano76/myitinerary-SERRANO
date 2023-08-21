@@ -1,0 +1,152 @@
+[
+    {
+        "_id": "64e2a5d4e6610505c2a78cf0",
+        "imageUrl": "https://images.pexels.com/photos/17498727/pexels-photo-17498727/free-photo-of-punto-de-referencia-turismo-turquia-pavo.jpeg?auto=compress&cs=tinysrgb&&w=600",
+        "title": "Turkey",
+        "location": "Fairy tale castle, Eskisehir",
+        "briefDescription": "Eskisehir, known for its fairy tale castle, is a charming city in Turkey.",
+        "__v": 0,
+        "createdAt": "2023-08-20T23:46:28.526Z",
+        "updatedAt": "2023-08-20T23:46:28.526Z"
+    },
+    {
+        "_id": "64e2a5d4e6610505c2a78cf1",
+        "imageUrl": "https://images.pexels.com/photos/17500031/pexels-photo-17500031/free-photo-of-paisaje-montanas-verano-lago.jpeg?auto=compress&cs=tinysrgb&&w=600",
+        "title": "Austria",
+        "location": "Lünersee Lake, Austrian Alps",
+        "briefDescription": "Lünersee Lake, nestled in the Austrian Alps, offers breathtaking views.",
+        "__v": 0,
+        "createdAt": "2023-08-20T23:46:28.527Z",
+        "updatedAt": "2023-08-20T23:46:28.527Z"
+    },
+    {
+        "_id": "64e2a5d4e6610505c2a78cf2",
+        "imageUrl": "https://images.pexels.com/photos/4161812/pexels-photo-4161812.jpeg?auto=compress&cs=tinysrgb&&w=600",
+        "title": "Argentina",
+        "location": "Humahuaca Ravine, Jujuy",
+        "briefDescription": "Jujuy's Humahuaca Ravine is a natural wonder in Argentina.",
+        "__v": 0,
+        "createdAt": "2023-08-20T23:46:28.527Z",
+        "updatedAt": "2023-08-20T23:46:28.527Z"
+    },
+    {
+        "_id": "64e2a5d4e6610505c2a78cf3",
+        "imageUrl": "https://media.istockphoto.com/id/869741554/es/foto/glaciar-y-lago-%C3%BAnico.jpg?s=612x612&w=0&k=20&c=bPtN4yn_jXZUqx_ezqqfXVw_2xIXm0ykL6MobcQiEKI=",
+        "title": "Argentina",
+        "location": "Perito Moreno Glacier, El Calafate",
+        "briefDescription": "El Calafate's Perito Moreno Glacier is a stunning natural marvel.",
+        "__v": 0,
+        "createdAt": "2023-08-20T23:46:28.527Z",
+        "updatedAt": "2023-08-20T23:46:28.527Z"
+    },
+    {
+        "_id": "64e2a5d4e6610505c2a78cf4",
+        "imageUrl": "https://media.istockphoto.com/id/475124388/es/foto/white-church-en-la-ciudad-de-oia-en-la-isla-de-santorini-grecia.jpg?s=612x612&w=0&k=20&c=g4KEhVLC3CldeuFK_ki_Z9Nt60NHQRmtEtcHamUvGO4=",
+        "title": "Greece",
+        "location": "Santorini Island",
+        "briefDescription": "Santorini, a stunning Greek island, is famous for its breathtaking views.",
+        "__v": 0,
+        "createdAt": "2023-08-20T23:46:28.527Z",
+        "updatedAt": "2023-08-20T23:46:28.527Z"
+    },
+    {
+        "_id": "64e2a5d4e6610505c2a78cf5",
+        "imageUrl": "https://media.istockphoto.com/id/1186175170/es/foto/bali-indonesia-traveler-on-tree-house-en-diamond-beach-en-nusa-penida-island.jpg?s=612x612&w=0&k=20&c=ynS6L2ylYm8p_EBr7B328osKaWuO9zQ0tWckgKLD6_I=",
+        "title": "Indonesia",
+        "location": "Nusa Penida Island",
+        "briefDescription": "Nusa Penida Island in Indonesia is a paradise for nature lovers.",
+        "__v": 0,
+        "createdAt": "2023-08-20T23:46:28.527Z",
+        "updatedAt": "2023-08-20T23:46:28.527Z"
+    },
+    {
+        "_id": "64e2a5d4e6610505c2a78cf6",
+        "imageUrl": "https://media.istockphoto.com/id/1133449890/es/foto/tour-eiffel-y-paisaje-urbano-de-par%C3%ADs.jpg?s=612x612&w=0&k=20&c=DutLoH8kvbitNtHiT-4JT7zslHHjcs3lq9Ud78lLneU=",
+        "title": "France",
+        "location": "Eiffel Tower, Paris",
+        "briefDescription": "The iconic Eiffel Tower defines the Parisian skyline.",
+        "__v": 0,
+        "createdAt": "2023-08-20T23:46:28.527Z",
+        "updatedAt": "2023-08-20T23:46:28.527Z"
+    },
+    {
+        "_id": "64e2a5d4e6610505c2a78cf7",
+        "imageUrl": "https://media.istockphoto.com/id/1169074379/es/foto/la-estatua-de-la-libertad-con-el-edificio-one-world-trade-se-centra-sobre-el-r%C3%ADo-hudson-y-el.jpg?s=612x612&w=0&k=20&c=xpiIDmtoWs1cFyXB_U2AFP-JYXxmMb4F3rgTpaV7pJc=",
+        "title": "United States of America",
+        "location": "New York City",
+        "briefDescription": "The vibrant city of New York offers a blend of cultures and experiences.",
+        "__v": 0,
+        "createdAt": "2023-08-20T23:46:28.527Z",
+        "updatedAt": "2023-08-20T23:46:28.527Z"
+    },
+    {
+        "_id": "64e2a5d4e6610505c2a78cf8",
+        "imageUrl": "https://images.pexels.com/photos/13558679/pexels-photo-13558679.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "title": "Argentina",
+        "location": "Fitz Roy Mountain, Patagonia",
+        "briefDescription": "Patagonia's Fitz Roy Mountain is a must-see for hikers and adventurers.",
+        "__v": 0,
+        "createdAt": "2023-08-20T23:46:28.527Z",
+        "updatedAt": "2023-08-20T23:46:28.527Z"
+    },
+    {
+        "_id": "64e2a5d4e6610505c2a78cf9",
+        "imageUrl": "https://images.pexels.com/photos/8242968/pexels-photo-8242968.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "title": "Argentina",
+        "location": "Corrientes Avenue, Buenos Aires City",
+        "briefDescription": "Buenos Aires' Corrientes Avenue is a cultural hub.",
+        "__v": 0,
+        "createdAt": "2023-08-20T23:46:28.527Z",
+        "updatedAt": "2023-08-20T23:46:28.527Z"
+    },
+    {
+        "_id": "64e2a5d4e6610505c2a78cfa",
+        "imageUrl": "https://images.pexels.com/photos/13457173/pexels-photo-13457173.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "title": "Argentina",
+        "location": "Desert, San Salvador de Jujuy",
+        "briefDescription": "San Salvador de Jujuy's desert landscape is captivating.",
+        "__v": 0,
+        "createdAt": "2023-08-20T23:46:28.527Z",
+        "updatedAt": "2023-08-20T23:46:28.527Z"
+    },
+    {
+        "_id": "64e2a5d4e6610505c2a78cfb",
+        "imageUrl": "https://images.pexels.com/photos/8242973/pexels-photo-8242973.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "title": "Argentina",
+        "location": "Iguazú Falls, Devil's Throat",
+        "briefDescription": "Witness the majestic Iguazú Falls in Argentina.",
+        "__v": 0,
+        "createdAt": "2023-08-20T23:46:28.527Z",
+        "updatedAt": "2023-08-20T23:46:28.527Z"
+    },
+    {
+        "_id": "64e2a5d4e6610505c2a78cfc",
+        "imageUrl": "https://images.pexels.com/photos/819764/pexels-photo-819764.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "title": "Barcelona, Spain",
+        "location": "La Sagrada Familia and Park Güell",
+        "briefDescription": "Barcelona's landmarks showcase Gaudi's genius.",
+        "__v": 0,
+        "createdAt": "2023-08-20T23:46:28.528Z",
+        "updatedAt": "2023-08-20T23:46:28.528Z"
+    },
+    {
+        "_id": "64e2a5d4e6610505c2a78cfd",
+        "imageUrl": "https://images.pexels.com/photos/2064827/pexels-photo-2064827.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "title": "Rome, Italy",
+        "location": "Colosseum and Ancient Ruins",
+        "briefDescription": "Rome's Colosseum is a testament to ancient history.",
+        "__v": 0,
+        "createdAt": "2023-08-20T23:46:28.528Z",
+        "updatedAt": "2023-08-20T23:46:28.528Z"
+    },
+    {
+        "_id": "64e2a5d4e6610505c2a78cfe",
+        "imageUrl": "https://images.pexels.com/photos/3605968/pexels-photo-3605968.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "title": "Budapest, Hungary",
+        "location": "Parliament Building and Danube River",
+        "briefDescription": "Budapest's landmarks offer a blend of history and beauty.",
+        "__v": 0,
+        "createdAt": "2023-08-20T23:46:28.528Z",
+        "updatedAt": "2023-08-20T23:46:28.528Z"
+    }
+]

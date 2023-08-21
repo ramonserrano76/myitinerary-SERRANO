@@ -15,9 +15,11 @@ body,
 /* Estilos para el contenedor principal */
 #root {
   display: unset;
+  
   flex-direction: column;
-  align-items: center;  
-  background-color: #f8f8f8;
+  align-items: center;
+  min-height: 100vh;  
+  background-color: #f7bebe;
 }
 
 .app-container {
