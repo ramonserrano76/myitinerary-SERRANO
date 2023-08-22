@@ -20,14 +20,16 @@ const CityDetail = () => {
     return (
         <div className="city-detail-container h-100 flex-grow-1 justify-content-center align-items-center">
             <Link to="/cities" className="back-button">Back</Link>
+            <div className="watermark-overlay">
+                <p className="watermark-text acerca_img"><div className="under-construction">
+                    <img src="https://cdn.pixabay.com/photo/2017/10/26/17/51/under-construction-2891888_1280.jpg" alt="Under Construction" />
+                    <p>COME BACK LATER</p>
+                </div></p>
+            </div>
             <img src={cityData.imageUrl} alt={cityData.title} />
             <h2>{cityData.title}</h2>
             <p>Location: {cityData.location}</p>
-            <p>{cityData.briefDescription}</p>
-            <div className="under-construction">
-                <img src="https://cdn.pixabay.com/photo/2017/10/26/17/51/under-construction-2891888_1280.jpg" width={300} alt="Under Construction" />
-                <p>Under Construction</p>
-            </div>
+            <p>{cityData.briefDescription}</p>            
         </div>
     );
 };

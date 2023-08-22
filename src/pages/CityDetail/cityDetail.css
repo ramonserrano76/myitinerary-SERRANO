@@ -49,12 +49,114 @@
 }
 
 .under-construction img {
-    width: 150px;
+    width: 400px;
     height: auto;
     margin-bottom: 10px;
 }
 
 .under-construction p {
-    font-size: 16px;
-    color: #f00;
+    font-size: 32x;
+    color: rgb(251, 255, 0);
+}
+
+.city-detail-container {
+    position: relative;
+    /* Agregar posición relativa para que los elementos internos puedan ser posicionados con respecto a este contenedor */
+    /* ... (otros estilos) */
+}
+
+.watermark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    /* Fondo semitransparente */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    /* Coloca la marca de agua encima de la imagen */
+    pointer-events: none;
+    /* Evita que la capa bloqueé los eventos del mouse */
+}
+
+.watermark-text {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* ESTA PARTE ES SOLO ARA EL MOVIMIENTO DE LA FOTO UNDER CONSTRUCTION */
+a {
+    text-decoration: none;
+    color: #ecf0f1
+}
+
+.acerca_img {
+    display: inline-block;
+    width: 400px;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation: jittery 3s infinite;
+    cursor: pointer;
+    position: fixed;
+    transition: .2s ease-in-out;
+    margin: 2rem
+}
+
+.acerca_img:hover {
+    animation: heartbeat .2s infinite
+}
+
+.acerca_img:nth-of-type(1) {}
+
+.acerca_img:nth-of-type(2) {}
+
+input[type=checkbox]:checked~.c-information p {
+    color: #000
+}
+
+input[type=checkbox]:checked~.c-information small {
+    color: #5e17eb
+}
+
+@keyframes jittery {
+
+    5%,
+    50% {
+        transform: scale(1)
+    }
+
+    10% {
+        transform: scale(.9)
+    }
+
+    15% {
+        transform: scale(1.15)
+    }
+
+    20% {
+        transform: scale(1.15) rotate(-5deg)
+    }
+
+    25% {
+        transform: scale(1.15) rotate(5deg)
+    }
+
+    30% {
+        transform: scale(1.15) rotate(-3deg)
+    }
+
+    35% {
+        transform: scale(1.15) rotate(2deg)
+    }
+
+    40% {
+        transform: scale(1.15) rotate(0)
+    }
 }
