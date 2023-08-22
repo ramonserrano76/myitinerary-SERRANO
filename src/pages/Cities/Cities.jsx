@@ -27,12 +27,12 @@ const Cities = () => {
         <div className="cities-container">
             <div className="hero2">
                 <div className="hero2-image-container">
-                    <h1>Welcome to the Cities page!</h1>
-                    <p>Explore the cities and find your perfect trip.</p>
+                    {/* <h1>Welcome to the Cities page!</h1> */}
+                    {/* <p>Explore the cities and find your perfect trip.</p> */}
                     <div className="row justify-content-center">
                         <div className="col-md-4">
                             <div className="mb-3">
-                                <label className="form-label">Find your City</label>
+                                <label className="form-label" style={{ marginTop: '10rem' }}>Explore the cities and find your perfect trip.</label>
                                 <input
                                     type="text"
                                     className="form-control"
