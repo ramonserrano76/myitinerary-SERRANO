@@ -15,7 +15,7 @@ const Carrousel = ({ data }) => {
             const slideImages = data.slice(startIndex, startIndex + imagesPerSlide);
             slides.push(
                 <Carousel.Item key={i}>
-                    <div className="row my-2 my-md-4 mt-4 justify-content-center d-inline-flex">
+                    <div className="row my-1 my-md-4 mt-4 justify-content-center d-inline-flex">
                         {slideImages.map((item, index) => (
                             <div className="col mb-3 mx-2 position-relative justify-content-center align-items-center d-flex flex-column" key={index}>
                                 <img
@@ -23,7 +23,7 @@ const Carrousel = ({ data }) => {
                                     src={item.imageUrl}
                                     alt={`Slide ${i + 1}`}
                                     height={260}
-                                    width={320}
+                                    width={290}
 
                                 // style={{ maxHeight: '300px', maxWidth: '440px' }} // Establecer el máximo alto
                                 />

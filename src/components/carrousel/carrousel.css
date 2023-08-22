@@ -3,8 +3,9 @@
     justify-content: center;
     min-width: auto;
     display: flex;
-    margin-top: 140px;   
-    padding-bottom: 0;    
+    margin-top: 57px;   
+    padding-bottom: 0;  
+    
 }
 .position-relative {
     position: relative !important;
