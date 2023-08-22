@@ -32,10 +32,10 @@ const Cities = () => {
                     <div className="row justify-content-center">
                         <div className="col-md-4">
                             <div className="mb-3">
-                                <label className="form-label" style={{ marginTop: '10rem' }}>Explore the cities and find your perfect trip.</label>
+                                <label className="form-label" style={{ marginTop: '9rem', marginBottom: '5px' }}>Explore the cities and find your perfect trip.</label>
                                 <input
                                     type="text"
-                                    className="form-control"
+                                    className="form-control min-w-0"
                                     placeholder="Search by Country"
                                     onInput={handleInput}
                                     ref={inputBusqueda}
