@@ -10,16 +10,17 @@ import { read } from "../../services/cityService.js";
 const Cities = () => {
     const [data, setData] = useState([]);
     // Crea las referencias para los inputs de búsqueda
-    const inputRef = useRef(null);
-    
+    const inputBusqueda = useRef(null);
+    const inputBusqueda2 = useRef(null);
     useEffect(() => {
         read().then(setData);
     }, []);
-    const handleInput = () => {
-        const query = inputRef.current.value;
 
-        read(`?title=${query}&location=${query}&briefDescription=${query}`)
-            .then(setData);
+    const handleInput = () => {
+        const title = inputBusqueda.current.value;
+        const location = inputBusqueda2.current.value;
+        let query = `?title=${title}&location=${location}`;
+        read(query).then(setData);
     };
 
     return (
@@ -31,14 +32,21 @@ const Cities = () => {
                     <div className="row justify-content-center">
                         <div className="col-md-4">
                             <div className="mb-3">
-                                <label className="form-label">Find your City</label>                                
+                                <label className="form-label">Find your City</label>
                                 <input
                                     type="text"
                                     className="form-control"
-                                    placeholder="Search by title, location, or brief description"
+                                    placeholder="Search by Country"
                                     onInput={handleInput}
-                                    ref={inputRef}
-                                />                                
+                                    ref={inputBusqueda}
+                                />
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    placeholder="Search by City"
+                                    onInput={handleInput}
+                                    ref={inputBusqueda2}
+                                />
                             </div>
                         </div>
                     </div>

@@ -24,7 +24,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/cities/:id",
-                element: <CityDetail />,
+                element: <CityDetail element={<CityDetailContainer />} />,
             },
         ],
     },
@@ -34,4 +34,13 @@ function App() {
     return <RouterProvider router={router} />;
 }
 
+function CityDetailContainer() {
+    const { id } = useParams(); // Obtiene el id de la URL
+
+    // Hacer una llamada para obtener los datos del id
+    // Supongamos que obtienes los datos en cityData
+    const cityData = getCityDataById(id);
+
+    return <CityDetail {...cityData} />;
+}
 export default App;

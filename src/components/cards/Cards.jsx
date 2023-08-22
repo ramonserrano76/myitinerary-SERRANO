@@ -24,9 +24,9 @@ const Cards = ({ item }) => {
                 <div className="card-footer d-flex justify-content-between">
                     {/* <small className="text-muted align-self-center fw-bold">Price: $${item.price}</small> */}
                     <div className="d-flex px-1 py-1 justify-content-end">
-                        <Link className="btn btn-sm btn-outline-secondary justify-content-end shadow" to={`/cities/${item._id}`}>
+                        <Link  to={`/cities/${item._id}`} className="btn btn-sm btn-outline-secondary justify-content-end shadow">
                             Details
-                        </Link>
+                        </Link>                        
                     </div>
                 </div>
             </div>
