@@ -1,26 +1,44 @@
 import React from 'react';
-import { useEffect, useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import { Button, Card, Form } from 'react-bootstrap';
+import { useEffect, useRef, useContext } from 'react';
+import { createContext } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchCities } from '../../redux/citySlice';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap styles
 import './cities.css';
 import Cards from '../../../src/components/cards/Cards.jsx';
 import { read } from "../../services/cityService.js";
+import io from 'socket.io-client';
 
+// Crea un contexto de Socket.io
+const SocketContext = createContext();
 const Cities = () => {
-    const [data, setData] = useState([]);
+    const dispatch = useDispatch();
+    const { data, loading, error } = useSelector((state) => state.cities);
+    const socket = useContext(SocketContext); 
     // Crea las referencias para los inputs de búsqueda
     const inputBusqueda = useRef(null);
     const inputBusqueda2 = useRef(null);
     useEffect(() => {
-        read().then(setData);
-    }, []);
+        dispatch(fetchCities());
+    }, [dispatch, socket]);
+
+    if (loading) {
+        return <p>Loading...</p>;
+    }
+
+    if (error) {
+        return <p>Error: {error}</p>;
+    }
+
+    if (!data) {
+        return <p>No data available</p>;
+    }    
 
     const handleInput = () => {
         const title = inputBusqueda.current.value;
         const location = inputBusqueda2.current.value;
         let query = `?title=${title}&location=${location}`;
-        read(query).then(setData);
+        read(query).then(data);
     };
 
     return (
@@ -42,7 +60,7 @@ const Cities = () => {
                                 />
                                 <input
                                     type="text"
-                                    className="form-control"
+                                    className="form-control min-w-0"
                                     placeholder="Search by City"
                                     onInput={handleInput}
                                     ref={inputBusqueda2}

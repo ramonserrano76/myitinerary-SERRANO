@@ -1,9 +1,17 @@
 import React from 'react';
+import { createContext } from 'react';
 import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 import Home from './pages/Home/Home.jsx';
 import Cities from './pages/Cities/Cities.jsx';
 import CityDetail from './pages/CityDetail/CityDetail.jsx';
 import LayoutMain from './layouts/Layoutmain/Layoutmain.jsx';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import io from 'socket.io-client';
+
+// Crea un contexto de Socket.io
+const SocketContext = createContext();
+
+const socket = io('http://localhost:8090/api/cities');
 
 const router = createBrowserRouter([
     {
@@ -24,23 +32,16 @@ const router = createBrowserRouter([
             },
             {
                 path: "/cities/:id",
-                element: <CityDetail element={<CityDetailContainer />} />,
+                element: <CityDetail />,
             },
         ],
     },
 ]);
 
 function App() {
-    return <RouterProvider router={router} />;
+    return <SocketContext.Provider value={socket}>
+        <RouterProvider router={router} />;
+    </SocketContext.Provider>
 }
 
-function CityDetailContainer() {
-    const { id } = useParams(); // Obtiene el id de la URL
-
-    // Hacer una llamada para obtener los datos del id
-    // Supongamos que obtienes los datos en cityData
-    const cityData = getCityDataById(id);
-
-    return <CityDetail {...cityData} />;
-}
-export default App;
+export default App; 

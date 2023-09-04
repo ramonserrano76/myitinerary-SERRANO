@@ -1,0 +1,25 @@
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.button-instance {
+    background-color: blue;
+    color: white;
+    padding: 20px 40px;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Agrega estilos adicionales según sea necesario para diferentes variantes */
+.primary {
+    background-color: blue;
+}
+
+.secondary {
+    background-color: red;
+}
