@@ -11,7 +11,12 @@ import io from 'socket.io-client';
 // Crea un contexto de Socket.io
 const SocketContext = createContext();
 
-const socket = io('http://localhost:8090/api/cities');
+const socket = io('http://localhost:8090/api/cities', {
+    withCredentials: true, // esto asegura que las credenciales se incluyan en las solicitudes
+    extraHeaders: {
+        //"my-custom-header": "abcd", // Agrega encabezados personalizados si es necesario
+    },
+});
 
 const router = createBrowserRouter([
     {
