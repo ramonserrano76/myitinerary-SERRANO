@@ -9,20 +9,13 @@ body,
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* width: 100%; */
+  width: 100%;
 }
 
 /* Estilos para el contenedor principal */
-#root {
-  display: unset;
-  
+#root {  
   flex-direction: column;
   align-items: center;
   min-height: 100vh;  
   background-color: #f7bebe;
-}
-
-.app-container {
-  width: 100%;  
-  min-height: 100vh;  
 }

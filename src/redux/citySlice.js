@@ -1,16 +1,23 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { read } from '../services/cityService'; // Importa la función de servicio que lee los datos
+import { read } from '../services/cityService.js'; // Importa la función de servicio que lee los datos
 
 const initialState = {
     data: [],
     cityData: null,
+    cities: [], // Nuevo campo para las ciudades no filtradas
+    filteredCities: [], // Un nuevo campo para las ciudades filtradas
     loading: false,
     error: null,
 };
 
+// Define las acciones asíncronas existentes
 export const fetchCities = createAsyncThunk('cities/fetchCities', async () => {
-    const data = await read();
-    return data;
+    try {
+        const data = await read();
+        return data;
+    } catch (error) {
+        throw error;
+    }
 });
 
 export const fetchCityDetail = createAsyncThunk('cities/fetchCityDetail', async (id) => {
@@ -30,8 +37,10 @@ const citySlice = createSlice({
                 state.error = null;
             })
             .addCase(fetchCities.fulfilled, (state, action) => {
-                state.loading = false;
-                state.data = action.payload;
+                state.loading = false;                
+                state.data = action.payload; // Actualiza las ciudades no filtradas con los datos
+                state.cities = action.payload.cities; // Actualiza las ciudades
+                state.filteredCities = action.payload; // Actualiza las ciudades filtradas
             })
             .addCase(fetchCities.rejected, (state, action) => {
                 state.loading = false;
@@ -43,7 +52,7 @@ const citySlice = createSlice({
             })
             .addCase(fetchCityDetail.fulfilled, (state, action) => {
                 state.loading = false;
-                state.cityData = action.payload; 
+                state.cityData = action.payload;
             })
             .addCase(fetchCityDetail.rejected, (state, action) => {
                 state.loading = false;
@@ -52,4 +61,4 @@ const citySlice = createSlice({
     },
 });
 
-export default citySlice.reducer;
+export default citySlice.reducer; 

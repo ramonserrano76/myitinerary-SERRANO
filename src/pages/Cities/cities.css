@@ -39,7 +39,7 @@
     height: 297vh;
     background-image: url('https://images.pexels.com/photos/4737518/pexels-photo-4737518.jpeg?nysrgb&w=1260&h=750&dpr=1');
     background-size: cover;
-    background-position: center;
+    background-position: top;
     /* z-index: -1; */
     /* Asegura que esté detrás del contenido */
 }

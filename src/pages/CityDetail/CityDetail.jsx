@@ -40,14 +40,10 @@ const CityDetail = () => {
                 <div className="div-2">
                     <div className="city-detail" style={{ backgroundImage: `url(${cityData.imageUrl})` }}>
                         <div className="frame-2">
-
-                            <div className="group">
-                                <div className="text-wrapper-4">{cityData.title}</div>
-                                <p className="p">{cityData.briefDescription}
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque lobortis ante sapien, non
-                                    vulputate lorem faucibus vitae. Nunc ac ultrices metus. Nam neque ex, dictum sed velit vitae, vehicula
-                                    sagittis risus. Aenean volutpat ante ex, et scelerisque dui blandit sed. Morbi pretium lorem nec
-                                    scelerisque consectetur. Donec odio odio, maximus nec magna sed, congue hendrerit sapien.
+                            <div className="container group">
+                                <div className="text-wrapper-4 d-flex justify-content-center">{cityData.title}</div>
+                                <p className="p d-flex justify-content-center">
+                                    {cityData.briefDescription}
                                 </p>
                                 <Button text="Go Back" variant="primary" />
                                 {/* <Button className="button-instance" divClassName="button-2" text="View Itineraries ↓" variant="default" /> */}
@@ -92,7 +88,7 @@ const CityDetail = () => {
                                                         <img className="union-stroke" alt="Union stroke" src="https://generation-sessions.s3.amazonaws.com/4b3646deae57bf4fa87ee2bbe1693204/img/union--stroke-@2x.png" />
                                                         <div className="text-wrapper-6">{activity.likes}</div>
                                                     </div>
-                                                    
+
                                                 </div>
                                                 <div className="row-2">
                                                     <div className="div-3">
@@ -134,7 +130,7 @@ const CityDetail = () => {
                                                                 <img className="ellipse-3" alt="Ellipse" src="https://s3-alpha-sig.figma.com/img/f5d1/c2d1/2f72cc0c526bbe4b0e7aae7a9b3e5e23?Expires=1694995200&Signature=NElcwkT96d4wo4K1GL3Gx9IHT2swoNx6S~ReJEPsdBzH0xOUIaSn7QPgC-B~MaHtcz6Ll0zIfpGFMXjWA2L-VNfCkCdzXFMyPL80hzNu9YCecziqYZxQVIXSzAQt6h7Xjx3HvizpK7v6WWBYQ2V7ovAApKRgC84b7BOf7HB7XP8qw17Irr5~PsaF4PJrUXSHLWeyGI-YsVbJy07JkawVLHZ5vR-IGP-CiLzvMopu15M7DNkJH72od2w0nQHoZowmjy8U8W7ZOmDgTP0KQwFmIe-QsZN1L9ep8T6eQz-ilIJ9HGmyVvEhQ9Y-FLMOW-XwYSmRpAiMfVoVC7p0Viumig__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
                                                                 <div className="text-wrapper-12">Lucas Silva</div>
                                                             </div>
-                                                            
+
                                                         </div>
                                                         <p className="p">
                                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum mauris vitae elit facilisis
@@ -145,7 +141,7 @@ const CityDetail = () => {
                                                             ex. Nunc ac ante quis metus viverra ullamcorper eu non nisi. Duis ultrices tempor tincidunt...
                                                         </p>
                                                     </div>
-                                                    
+
                                                 </div>
                                             </div>
                                         </div>

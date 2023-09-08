@@ -9,12 +9,14 @@ import { Outlet } from "react-router-dom";
 
 const LayoutMain = () => {
     return (
-        <div className="flex flex-col min-h-screen">
+        <div className="d-flex flex-column min-vh-100">
             <NavbarMain />
-            <main className="flex-grow-1 mt-auto">
+            <main className="flex-grow-1">
                 <Outlet />
             </main>
-            <Footer className="fixed-bottom flex-grow-1 mt-auto style={{position: absolute; bottom: 0;}}" />
+            <footer>
+                <Footer className="footer" style={{ position: 'absolute', bottom: 0 }} />
+            </footer>
         </div>
     );
 };

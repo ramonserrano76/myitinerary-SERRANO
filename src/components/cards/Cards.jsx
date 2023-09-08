@@ -1,17 +1,18 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
 const Cards = ({ item }) => {
     return (
         <div className="col-md-6 col-lg-3 mb-4 mt-4" id={item._id}>
-            <div className="card p-3 d-flex align-items-stretch">
-                <a to={`/cities/${item._id}`} >
-                    <img 
-                        className="card-img-top h-75 shadow" style={{ height: '300px', maxHeight: '200px' }}
-                    src={ item.imageUrl }
-                    alt="" 
-                    />                    
-                </a>
+            <div className="card p-3 d-flex flex-column justify-content-between" style={{ height: '400px' }}>
+                <Link to={`/cities/${item._id}`}>
+                    <img
+                        className="card-img-top h-100 shadow" style={{ height: '300px', maxHeight: '200px' }}
+                        src={item.imageUrl}
+                        alt=""
+                    />
+                </Link>
                 <div className="card-body">
                     <h5 className="card-title mb-0 text-uppercase">{item.title}</h5>
                     <p className="card-text text-decoration-none fs-6">
@@ -21,16 +22,16 @@ const Cards = ({ item }) => {
                         {item.location}
                     </p>
                 </div>
-                <div className="card-footer d-flex justify-content-between">
-                    {/* <small className="text-muted align-self-center fw-bold">Price: $${item.price}</small> */}
+                <div className="card-footer">
                     <div className="d-flex px-1 py-1 justify-content-end">
-                        <Link  to={`/cities/${item._id}`} className="btn btn-sm btn-outline-secondary justify-content-end shadow">
+                        <Link to={`/cities/${item._id}`} className="btn btn-sm btn-outline-secondary justify-content-end shadow">
                             Details
-                        </Link>                        
+                        </Link>
                     </div>
                 </div>
             </div>
         </div>
     );
-};
+}
+
 export default Cards;

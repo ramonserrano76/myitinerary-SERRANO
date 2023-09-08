@@ -6,7 +6,7 @@ import Cities from './pages/Cities/Cities.jsx';
 import CityDetail from './pages/CityDetail/CityDetail.jsx';
 import LayoutMain from './layouts/Layoutmain/Layoutmain.jsx';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import io from 'socket.io-client';
+import io from 'socket.io-client'
 
 // Crea un contexto de Socket.io
 const SocketContext = createContext();
@@ -16,7 +16,7 @@ const socket = io('http://localhost:8090/api/cities', {
     extraHeaders: {
         //"my-custom-header": "abcd", // Agrega encabezados personalizados si es necesario
     },
-});
+})
 
 const router = createBrowserRouter([
     {
@@ -41,12 +41,12 @@ const router = createBrowserRouter([
             },
         ],
     },
-]);
+])
 
 function App() {
     return <SocketContext.Provider value={socket}>
-        <RouterProvider router={router} />;
-    </SocketContext.Provider>
+        <RouterProvider router={router} />
+        </SocketContext.Provider>
 }
 
 export default App; 

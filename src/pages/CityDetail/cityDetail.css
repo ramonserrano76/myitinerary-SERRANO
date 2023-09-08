@@ -1,7 +1,5 @@
 /* CityDetail.css */
 
-
-
 .under-construction p {
     font-size: 32x;
     color: rgb(251, 255, 0);
@@ -114,53 +112,52 @@ input[type=checkbox]:checked~.c-information small {
 .citydetail-con {
     background-color: transparent;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 100vw;
 }
 
 .citydetail-con .div-2 {
-    height: 620px;
-    position: relative;
+    background-position: top;
+    height: 65vh;
     width: 100vw;
 }
 
-.citydetail-con .city-detail {   
+.citydetail-con .city-detail {
     background-position: center;
     background-size: cover;
-    height: 1117px;
-    left: 0;
-    position: absolute;
+    /* Cambiado a "cover" */
+    height: 65vh;
+    max-height: 133vh;
     justify-content: center;
-    top: 0;
     width: 100vw;
+    position: absolute;
 }
 
 .citydetail-con .frame-2 {
     background-color: #00000099;
-    height: 1117px;
-    position: relative;
+    background-position: center;
+    background-size: cover;
+    /* Cambiado a "cover" */
+    max-height: 133vh;
+    height: 65vh;
+    width: 100vw;
+    position: absolute;
 }
 
 .citydetail-con .group {
-    height: 425px;
-    left: 476px;
-    position: absolute;
-    top: 120px;
-    width: 781px;
+    position: relative;
+    height: 54vh;
+    width: 100vw;
 }
 
 .citydetail-con .text-wrapper-4 {
     color: #ffffff;
     font-family: "Segoe UI-Bold", Helvetica;
-    font-size: 96px;
+    font-size: 72px;
     font-weight: 700;
-    height: 128px;
-    left: 147px;
     letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 0;
 }
 
 .citydetail-con .p {
@@ -170,25 +167,7 @@ input[type=checkbox]:checked~.c-information small {
     font-style: normal;
     font-weight: 400;
     letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 153px;
-    width: 777px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
