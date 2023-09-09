@@ -4,7 +4,9 @@ import { read } from '../services/cityService.js'; // Importa la función de ser
 const initialState = {
     data: [],
     cityData: null,
+    
     cities: [], // Nuevo campo para las ciudades no filtradas
+    
     filteredCities: [], // Un nuevo campo para las ciudades filtradas
     loading: false,
     error: null,
@@ -26,10 +28,26 @@ export const fetchCityDetail = createAsyncThunk('cities/fetchCityDetail', async 
     return city || null; // Devolver null si no se encontró la ciudad
 });
 
+// Agrega más reducers para manejar otros eventos
 const citySlice = createSlice({
     name: 'cities',
     initialState,
-    reducers: {},
+    reducers: {
+        // Actualiza el estado de la ciudad seleccionada
+        setSelectedCity(state, action) {
+            state.selectedCity = action.payload;
+        },
+        
+        // Actualiza el estado de la búsqueda
+        setSearchTerm(state, action) {
+            state.title = action.payload;
+            state.location = action.payload;
+            state.filteredCities = state.cities.filter((item) =>
+                item.title.toLowerCase().includes(state.title.toLowerCase()) &&
+                item.location.toLowerCase().includes(state.location.toLowerCase())
+            );
+        },
+    },
     extraReducers: (builder) => {
         builder
             .addCase(fetchCities.pending, (state) => {
@@ -37,10 +55,10 @@ const citySlice = createSlice({
                 state.error = null;
             })
             .addCase(fetchCities.fulfilled, (state, action) => {
-                state.loading = false;                
-                state.data = action.payload; // Actualiza las ciudades no filtradas con los datos
-                state.cities = action.payload.cities; // Actualiza las ciudades
-                state.filteredCities = action.payload; // Actualiza las ciudades filtradas
+                state.loading = false;
+                state.data = action.payload;
+                state.cities = action.payload.cities;
+                state.filteredCities = action.payload;
             })
             .addCase(fetchCities.rejected, (state, action) => {
                 state.loading = false;
@@ -57,8 +75,10 @@ const citySlice = createSlice({
             .addCase(fetchCityDetail.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.error.message;
-            });
+            })
+            
+            
     },
 });
 
-export default citySlice.reducer; 
+export default citySlice.reducer;

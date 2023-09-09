@@ -7,18 +7,18 @@ import Accordion from 'react-bootstrap/Accordion';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Frame from "../../components/frame/Frame.jsx";
 import Button from "../../components/button/Button.jsx";
-const SocketContext = createContext();
+// const SocketContext = createContext();
 
 const CityDetail = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
     const { cityData, loading, error } = useSelector((state) => state.cities);
-    const socket = useContext(SocketContext);
+    // const socket = useContext(SocketContext);
     console.log('cityData:', cityData);
     useEffect(() => {
         // Dispatch de la acción para cargar los datos de la ciudad por su ID
         dispatch(fetchCityDetail(id));
-    }, [dispatch, socket, id]);
+    }, [dispatch, id]);
 
 
     if (loading) {
