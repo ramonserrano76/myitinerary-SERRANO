@@ -108,7 +108,7 @@ input[type=checkbox]:checked~.c-information small {
 }
 
 
-/* ESTA PARTE ES SOLO  LA itineraries */
+/* ESTA PARTE ES SOLO  LA itineraries no Accodion*/
 .citydetail-con {
     background-color: transparent;
     display: flex;
@@ -152,12 +152,13 @@ input[type=checkbox]:checked~.c-information small {
     width: 100vw;
 }
 
-.citydetail-con .text-wrapper-4 {
+.citydetail-con .text-wrapper {
     color: #ffffff;
     font-family: "Segoe UI-Bold", Helvetica;
     font-size: 72px;
     font-weight: 700;
     letter-spacing: 0;
+    left: 750px;
 }
 
 .citydetail-con .p {
@@ -169,42 +170,42 @@ input[type=checkbox]:checked~.c-information small {
     letter-spacing: 0;
 }
 
-
-
-
-
-
 .frame-screen {
     background-color: #ebebeb;
-    height: 3303px;
-    position: relative;
-    width: 1728px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;   
+    width: 95vw;
+    min-height: 100vh;
+    padding: 20px;
+    
 }
 
 .frame-screen .text-wrapper {
-    color: var(--black);
-    font-family: var(--h-1-font-family);
-    font-size: var(--h-1-font-size);
-    font-style: var(--h-1-font-style);
-    font-weight: var(--h-1-font-weight);
-    left: 769px;
-    letter-spacing: var(--h-1-letter-spacing);
-    line-height: var(--h-1-line-height);
+    color: black;
+    font-family: "Segoe UI-Bold", Helvetica;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0;
     position: absolute;
-    top: 173px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
 }
 
+
 .frame-screen .row {
-    align-items: center;
+    align-items: flex-start;
+    /* Change to flex-start to align items from the top */
     display: flex;
-    gap: 32px;
-    height: 498px;
+    flex-direction: row;
+    /* Change from row to column */
+    gap: 10px;
     justify-content: center;
-    left: 0;
-    padding: 10px;
-    position: absolute;
-    top: 306px;
-    width: 1728px;
+    width: 100%;
+    /* Make sure the row takes full width */
 }
 
 .frame-screen .card {
@@ -214,132 +215,99 @@ input[type=checkbox]:checked~.c-information small {
     overflow: hidden;
     position: relative;
     width: 350px;
+    height: 350px;
+}
+.frame-screen .card {
+    align-self: stretch;
+    background: radial-gradient(50% 50% at 50% 50%, rgb(131, 234, 241) 0%, rgb(99, 164, 255) 100%);
+    border-radius: 16px;
+    overflow: hidden;
+    width: 100%;
+    /* Make cards take full width of the container */
+    max-width: 350px;
+    /* Limit the maximum width */
 }
 
 .frame-screen .div {
-    color: var(--black);
-    font-family: var(--parrafo-font-family);
-    font-size: var(--parrafo-font-size);
-    font-style: var(--parrafo-font-style);
-    font-weight: var(--parrafo-font-weight);
-    left: 97px;
-    letter-spacing: var(--parrafo-letter-spacing);
-    line-height: var(--parrafo-line-height);
-    position: absolute;
-    top: 343px;
-}
-
-.frame-screen .haze-darts-target {
-    height: 256px;
-    left: 44px;
-    object-fit: cover;
-    position: absolute;
-    top: 58px;
-    width: 256px;
-}
-
-.frame-screen .card-2 {
-    align-self: stretch;
-    background: radial-gradient(50% 50% at 50% 50%, rgb(165, 148, 249) 0%, rgb(98, 71, 170) 100%);
-    border-radius: 16px;
-    overflow: hidden;
-    position: relative;
-    width: 350px;
-}
-
-.frame-screen .text-wrapper-2 {
-    color: var(--black);
-    font-family: var(--parrafo-font-family);
-    font-size: var(--parrafo-font-size);
-    font-style: var(--parrafo-font-style);
-    font-weight: var(--parrafo-font-weight);
-    left: 94px;
-    letter-spacing: var(--parrafo-letter-spacing);
-    line-height: var(--parrafo-line-height);
-    position: absolute;
+    color: black;
+    font-family: "Segoe UI-Semibold";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: lighter;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    left: 79px;
+    display: flex;
     top: 343px;
 }
 
 .frame-screen .haze-globe {
     height: 250px;
-    left: 87px;
+    display: flex;
+    flex-direction: row;
+    top: 50px;
+    margin: auto auto;
+    align-items: center;
+    justify-content: center;
     object-fit: cover;
-    position: absolute;
-    top: 64px;
-    width: 177px;
 }
 
-.frame-screen .card-3 {
-    align-self: stretch;
-    background: radial-gradient(50% 50% at 50% 50%, rgb(205, 193, 255) 0%, rgb(205, 193, 255) 100%);
-    border-radius: 16px;
-    overflow: hidden;
-    position: relative;
-    width: 350px;
-}
 
-.frame-screen .text-wrapper-3 {
-    color: var(--black);
-    font-family: var(--parrafo-font-family);
-    font-size: var(--parrafo-font-size);
-    font-style: var(--parrafo-font-style);
-    font-weight: var(--parrafo-font-weight);
-    left: 66px;
-    letter-spacing: var(--parrafo-letter-spacing);
-    line-height: var(--parrafo-line-height);
-    position: absolute;
-    top: 343px;
-}
-
-.frame-screen .haze-books-and-study {
-    height: 256px;
-    left: 46px;
-    object-fit: cover;
-    position: absolute;
-    top: 58px;
-    width: 256px;
-}
+/*la parte de itineraries*/
 
 .frame-screen .text-wrapper-4 {
-    color: var(--black);
-    font-family: var(--h-1-font-family);
-    font-size: var(--h-1-font-size);
-    font-style: var(--h-1-font-style);
-    font-weight: var(--h-1-font-weight);
+    color: black;
+    font-family: "Segoe UI-Semibold";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     left: 750px;
-    letter-spacing: var(--h-1-letter-spacing);
-    line-height: var(--h-1-line-height);
-    position: absolute;
-    top: 871px;
+    letter-spacing: 0;
+    top: 520px;
 }
 
+
 .frame-screen .itinerarie {
-    align-items: center;
+    align-items: flex-start;
+    /* Change to flex-start to align items from the top */
     background-color: #ffffff;
     border-radius: 16px;
     box-shadow: 0px 2px 2px #00000012;
-    display: inline-flex;
+    display: flex;
+    /* Change to flex */
     flex-direction: column;
+    /* Ensure it's a column layout */
+    gap: 16px;
+    justify-content: flex-start;
+    /* Change from center to flex-start */
+    padding: 32px;
+    width: 100%;
+    /* Make sure itineraries take full width */
+}
+.frame-screen .itinerarie {
+    align-items: center;
+    /* Centra verticalmente el contenido de "itinerarie" */
+    display: flex;
+    flex-direction: column;
+    /* Coloca el contenido de "itinerarie" en una columna */
     gap: 16px;
     justify-content: center;
-    left: 470px;
-    overflow: hidden;
-    padding: 32px;
-    position: absolute;
-    top: 1004px;
+    /* Centra horizontalmente el contenido de "itinerarie" */
+    padding: 16px;
+    /* Añade espacio alrededor del contenido de "itinerarie" */
 }
 
 .frame-screen .text-wrapper-5 {
-    color: var(--black);
-    font-family: var(--h-3-font-family);
-    font-size: var(--h-3-font-size);
-    font-style: var(--h-3-font-style);
-    font-weight: var(--h-3-font-weight);
-    letter-spacing: var(--h-3-letter-spacing);
-    line-height: var(--h-3-line-height);
-    margin-top: -1px;
-    position: relative;
-    width: fit-content;
+    color: black;
+    font-family: "Segoe UI-Semibold";
+    font-size: 24px;
+    padding: 24px 0;
+    /* Añade espacio entre el título "Itineraries" y el contenido */
+    text-align: center;
 }
 
 .frame-screen .frame-wrapper {
@@ -347,6 +315,13 @@ input[type=checkbox]:checked~.c-information small {
     height: 544px;
     position: sticky;
     width: 725px;
+    position: relative;
+}
+.frame-screen .frame-wrapper {
+    background-color: #00000099;
+    height: 544px;
+    width: 725px;
+    position: relative;
 }
 
 .frame-screen .frame-2 {
@@ -392,12 +367,6 @@ input[type=checkbox]:checked~.c-information small {
     width: fit-content;
 }
 
-.frame-screen .vector {
-    height: 9px;
-    margin-right: -0.75px;
-    position: relative;
-    width: 16.5px;
-}
 
 .frame-screen .itinerarie-2 {
     align-items: center;
@@ -511,6 +480,17 @@ input[type=checkbox]:checked~.c-information small {
     position: relative;
 }
 
+.frame-screen .comments {
+    align-items: flex-center;
+    /* Change to flex-start to align items from the top */
+    display: flex;
+    /* Change to flex */
+    flex-direction: column;
+    /* Ensure it's a column layout */
+    gap: 16px;
+    padding: 20px 0;
+    /* Adjust padding as needed */
+}
 .frame-screen .text-wrapper-10 {
     color: var(--black);
     font-family: "Segoe UI-Semibold", Helvetica;
