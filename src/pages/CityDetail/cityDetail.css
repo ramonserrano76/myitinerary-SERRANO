@@ -562,25 +562,25 @@ input[type=checkbox]:checked~.c-information small {
 }
 
 .frame-screen .col {
-    align-items: flex-start;
+    align-items: baseline;
     display: flex;
     flex-direction: column;
     gap: 10px;
     justify-content: center;
-    left: 26px;
+    left: 0px;
     position: absolute;
     top: 43px;
-    width: 673px;
+    width: 873px;
 }
 
 .frame-screen .row-4 {
-    align-items: center;
+    
     display: flex;
     flex: 0 0 auto;
     justify-content: space-between;
     padding: 0px 23px;
     position: relative;
-    width: 671px;
+    
 }
 
 .frame-screen .frame-5 {
@@ -610,20 +610,6 @@ input[type=checkbox]:checked~.c-information small {
     top: 10px;
 }
 
-.frame-screen .tres-puntitos {
-    color: var(--grey-p);
-    font-family: "Segoe UI-Semibold", Helvetica;
-    font-size: 20px;
-    font-weight: 400;
-    height: 10px;
-    letter-spacing: 2px;
-    line-height: normal;
-    position: relative;
-    text-align: center;
-    white-space: nowrap;
-    width: 20px;
-}
-
 .frame-screen .p {
     color: var(--grey-p);
     font-family: "Segoe UI-Regular", Helvetica;
@@ -634,12 +620,4 @@ input[type=checkbox]:checked~.c-information small {
     line-height: normal;
     position: relative;
     width: 673px;
-}
-
-.frame-screen .line {
-    height: 45px;
-    left: 708px;
-    position: absolute;
-    top: 42px;
-    width: 3px;
 }
