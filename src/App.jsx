@@ -11,6 +11,7 @@ import SignIn from './pages/SignIn/SignIn.jsx';
 import SignUp from './pages/SignUp/SignUp.jsx';
 import LayoutMain from './layouts/Layoutmain/Layoutmain.jsx';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
 // import io from 'socket.io-client'
 
 // // Crea un contexto de Socket.io

@@ -27,7 +27,7 @@ const SignIn = () => {
                 console.log(response);
                 if (response.payload.success) {
                     alert("Welcome " + response.payload.user.name);
-                    navigate("/");
+                    navigate(-1);
                 }
                 else { alert("Sign-in failed. Please check your credentials.") };
             });

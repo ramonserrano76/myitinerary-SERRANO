@@ -7,6 +7,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Frame from "../../components/frame/Frame.jsx";
 import Button from "../../components/button/Button.jsx";
+
 // const SocketContext = createContext();
 
 const CityDetail = () => {
@@ -56,7 +57,12 @@ const CityDetail = () => {
                 <Accordion>
                     {cityData && cityData.itineraries && cityData.itineraries.map((itinerary) => (
                         <Accordion.Item key={itinerary._id} eventKey={itinerary._id}>
-                            <Accordion.Header>{itinerary.name}</Accordion.Header>
+                            <Accordion.Header>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                    <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
+                                </svg> {'  '} {itinerary.name}
+                            </Accordion.Header>
                             <Accordion.Body>
                                 {itinerary.activities.map((activity) => (
                                     <div key={activity._id} className="activity">
@@ -125,7 +131,7 @@ const CityDetail = () => {
                                                 </div>
                                                 <div className="frame-6">
                                                     <img className="ellipse-2" alt="Ellipse" src="https://s3-alpha-sig.figma.com/img/f5d1/c2d1/2f72cc0c526bbe4b0e7aae7a9b3e5e23?Expires=1694995200&Signature=NElcwkT96d4wo4K1GL3Gx9IHT2swoNx6S~ReJEPsdBzH0xOUIaSn7QPgC-B~MaHtcz6Ll0zIfpGFMXjWA2L-VNfCkCdzXFMyPL80hzNu9YCecziqYZxQVIXSzAQt6h7Xjx3HvizpK7v6WWBYQ2V7ovAApKRgC84b7BOf7HB7XP8qw17Irr5~PsaF4PJrUXSHLWeyGI-YsVbJy07JkawVLHZ5vR-IGP-CiLzvMopu15M7DNkJH72od2w0nQHoZowmjy8U8W7ZOmDgTP0KQwFmIe-QsZN1L9ep8T6eQz-ilIJ9HGmyVvEhQ9Y-FLMOW-XwYSmRpAiMfVoVC7p0Viumig__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
-                                                    
+
                                                 </div>
                                                 <div className="col">
                                                     <div className="row-4">

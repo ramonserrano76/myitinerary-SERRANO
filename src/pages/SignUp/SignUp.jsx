@@ -54,7 +54,7 @@ const SignUp = () => {
             console.log(response);
             if (response.payload.success) {
                 alert("Thankyou for Register " + response.payload.user.name);
-                navigate("/");
+                navigate(-1);
             }
             else { alert("Sign-up failed. Please check your register data.") };
         });
@@ -115,8 +115,8 @@ return (
                         </Form.Group>
                     </Row>
                     <Form.Group controlId="exampleForm.SelectCustom">
-                        <Form.Control name="country" ref={country} as="select" onChange={handleChangeData}>
-                            <option value="">Country</option>
+                        <Form.Control name="country" ref={country} as="select" onChange={handleChangeData} aria-describedby="country-addon" aria-label="Country" placeholder="Country">
+                            <option value="">Countr</option>
                             {countries.map((country) => (
                                 <option key={`opt-country-${country}`} value={country}>
                                     {country}

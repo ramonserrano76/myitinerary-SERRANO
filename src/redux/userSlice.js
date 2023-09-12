@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-
+import { createAction } from "@reduxjs/toolkit";
 // Función de utilidad para configurar el encabezado de autorización
 const setAuthHeader = (token) => {
     if (token) {
@@ -16,6 +16,12 @@ const initialState = {
     loading: false,
     error: null,
 };
+
+export const loadUser = createAction('user/load', (user) => {
+    return {
+        payload: user
+    }
+})
 
 export const signUp = createAsyncThunk("user/signUp", async (body) => {
     try {
@@ -48,13 +54,13 @@ export const signIn = createAsyncThunk("user/signIn", async (body) => {
 
 export const signInWithToken = createAsyncThunk(
     "user/signInWithToken",
-    async () => {
+    async (  ) => {
         try {
             const token = localStorage.getItem("token");
             if (!token) {
                 throw new Error("Token not found in local storage");
             }
-            const response = await axios.post("http://localhost:8090/api/token", {},
+            const response = await axios.post("http://localhost:8090/api/auth/token", {},
                 {
                     headers: { Authorization: `Bearer ${token}` },
                 })
@@ -86,6 +92,12 @@ const userSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder
+            .addCase(loadUser, (stateActual, action) => {
+                return {
+                    ...stateActual,
+                    user: action.payload
+                }
+            })
             .addCase(signUp.pending, (stateActual) => {
                 return {
                     ...stateActual,
