@@ -1,9 +1,14 @@
 import React from 'react';
 // import { createContext } from 'react';
 import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { signInWithToken } from "./redux/userSlice.js";
 import Home from './pages/Home/Home.jsx';
 import Cities from './pages/Cities/Cities.jsx';
 import CityDetail from './pages/CityDetail/CityDetail.jsx';
+import SignIn from './pages/SignIn/SignIn.jsx';
+import SignUp from './pages/SignUp/SignUp.jsx';
 import LayoutMain from './layouts/Layoutmain/Layoutmain.jsx';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 // import io from 'socket.io-client'
@@ -33,6 +38,14 @@ const router = createBrowserRouter([
                 element: <Navigate to="/home" />, // Redirigir a /home
             },
             {
+                path: "/signin", // signin
+                element: <SignIn />, // ruta a SignIn
+            },
+            {
+                path: "/signup", // signin
+                element: <SignUp />, // ruta a SignUp
+            },
+            {
                 path: "/home", // Nueva ruta /home
                 element: <Home />,
             },
@@ -49,6 +62,13 @@ const router = createBrowserRouter([
 ])
 
 function App() {
+    const dispatch = useDispatch();
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        if (token) {
+            dispatch(signInWithToken());
+        }
+    }, []);
     return <RouterProvider router={router} />
 }
 

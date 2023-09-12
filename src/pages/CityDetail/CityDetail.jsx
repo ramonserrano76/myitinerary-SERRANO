@@ -123,13 +123,16 @@ const CityDetail = () => {
                                                     <input type="text" placeholder="Add comment" />
                                                     <button type="submit">Enviar</button>
                                                 </div>
-                                                <img className="ellipse-2" alt="Ellipse" src="https://s3-alpha-sig.figma.com/img/f5d1/c2d1/2f72cc0c526bbe4b0e7aae7a9b3e5e23?Expires=1694995200&Signature=NElcwkT96d4wo4K1GL3Gx9IHT2swoNx6S~ReJEPsdBzH0xOUIaSn7QPgC-B~MaHtcz6Ll0zIfpGFMXjWA2L-VNfCkCdzXFMyPL80hzNu9YCecziqYZxQVIXSzAQt6h7Xjx3HvizpK7v6WWBYQ2V7ovAApKRgC84b7BOf7HB7XP8qw17Irr5~PsaF4PJrUXSHLWeyGI-YsVbJy07JkawVLHZ5vR-IGP-CiLzvMopu15M7DNkJH72od2w0nQHoZowmjy8U8W7ZOmDgTP0KQwFmIe-QsZN1L9ep8T6eQz-ilIJ9HGmyVvEhQ9Y-FLMOW-XwYSmRpAiMfVoVC7p0Viumig__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
+                                                <div className="frame-6">
+                                                    <img className="ellipse-2" alt="Ellipse" src="https://s3-alpha-sig.figma.com/img/f5d1/c2d1/2f72cc0c526bbe4b0e7aae7a9b3e5e23?Expires=1694995200&Signature=NElcwkT96d4wo4K1GL3Gx9IHT2swoNx6S~ReJEPsdBzH0xOUIaSn7QPgC-B~MaHtcz6Ll0zIfpGFMXjWA2L-VNfCkCdzXFMyPL80hzNu9YCecziqYZxQVIXSzAQt6h7Xjx3HvizpK7v6WWBYQ2V7ovAApKRgC84b7BOf7HB7XP8qw17Irr5~PsaF4PJrUXSHLWeyGI-YsVbJy07JkawVLHZ5vR-IGP-CiLzvMopu15M7DNkJH72od2w0nQHoZowmjy8U8W7ZOmDgTP0KQwFmIe-QsZN1L9ep8T6eQz-ilIJ9HGmyVvEhQ9Y-FLMOW-XwYSmRpAiMfVoVC7p0Viumig__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
+                                                    
+                                                </div>
                                                 <div className="col">
                                                     <div className="row-4">
                                                         <div className="frame-5">
                                                             <img className="ellipse-3" alt="Ellipse" src="https://s3-alpha-sig.figma.com/img/f5d1/c2d1/2f72cc0c526bbe4b0e7aae7a9b3e5e23?Expires=1694995200&Signature=NElcwkT96d4wo4K1GL3Gx9IHT2swoNx6S~ReJEPsdBzH0xOUIaSn7QPgC-B~MaHtcz6Ll0zIfpGFMXjWA2L-VNfCkCdzXFMyPL80hzNu9YCecziqYZxQVIXSzAQt6h7Xjx3HvizpK7v6WWBYQ2V7ovAApKRgC84b7BOf7HB7XP8qw17Irr5~PsaF4PJrUXSHLWeyGI-YsVbJy07JkawVLHZ5vR-IGP-CiLzvMopu15M7DNkJH72od2w0nQHoZowmjy8U8W7ZOmDgTP0KQwFmIe-QsZN1L9ep8T6eQz-ilIJ9HGmyVvEhQ9Y-FLMOW-XwYSmRpAiMfVoVC7p0Viumig__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
                                                             <div className="text-wrapper-12">Lucas Silva</div>
-                                                        </div>                                                       
+                                                        </div>
                                                         <p className="p">
                                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum mauris vitae elit facilisis
                                                             tincidunt. Mauris ultrices ut massa gravida dignissim. Duis euismod rutrum urna rutrum consequat.
@@ -138,9 +141,9 @@ const CityDetail = () => {
                                                             rutrum felis. Ut consequat volutpat est et porttitor. Sed ac dui laoreet, dignissim purus a, sollicitudin
                                                             ex. Nunc ac ante quis metus viverra ullamcorper eu non nisi. Duis ultrices tempor tincidunt...
                                                         </p>
-                                                    
+
                                                     </div>
-                                                    
+
                                                 </div>
                                             </div>
                                         </div>
