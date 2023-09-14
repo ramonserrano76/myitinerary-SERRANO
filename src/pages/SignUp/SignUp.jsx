@@ -1,14 +1,16 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from 'react-router';
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 import { Link } from 'react-router-dom';
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 import GoogleLoginButton from '../../components/GoogleLoginButton/GoogleLoginButton.jsx';
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import { signUp } from "../../redux/userSlice.js";
 import { current } from '@reduxjs/toolkit';
-
+import jwtDecode from "jwt-decode";
+import { toast } from "react-toastify";
+import { ToastContainer } from 'react-toastify';
 const SignUp = () => {
 
     const [countries, setCountries] = useState([]);
@@ -18,7 +20,7 @@ const SignUp = () => {
     const name = useRef(null);
     const email = useRef(null);
     const password = useRef(null);
-    const photo = useRef(null);
+    const image = useRef(null);
     const country = useRef(null);
     const terms = useRef(null);
 
@@ -43,10 +45,16 @@ const SignUp = () => {
         const aux = [name, email, password, country];
 
         if (aux.some((campo) => !campo.current.value)) {
-            alert("All fields are required");
+            toast.warning("All fields are required.", {
+                position: "top-left",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true
+            });
+
         } else {
             const body = {};
-            const lib = { name, email, password, photo, country };
+            const lib = { name, email, password, image, country };
             console.log(lib);
             for (const key in lib) {
                 if (lib[key].current.value) {
@@ -55,15 +63,85 @@ const SignUp = () => {
             }
             console.log(body);
 
-                dispatch(signUp(body)).then((response) => {
+            dispatch(signUp(body)).then((response) => {
                 console.log(response);
-                if (response.payload.success) {
-                    alert("Thankyou for Register " + response.payload.user.name);
-                    navigate(-1);
-                }
-                else { alert("Sign-up failed. Please check your register data.") };
+                if (response.payload && response.payload.success) {
+
+                    toast.success("Thank you for registering " + response.payload.user.name, {
+                        position: "top-left",
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: false
+                    });
+
+
+                } else {
+                    if (response.error) {
+                        toast.error("Email already exists. Please use a different email.", {
+                            position: "top-left",
+                            autoClose: 2000,
+                            hideProgressBar: false,
+                            closeOnClick: false
+                        });
+                    } else {
+                        toast.error("Sign-up failed. Please check your registration data.", {
+                            position: "top-left",
+                            autoClose: 2000,
+                            hideProgressBar: false,
+                            closeOnClick: false
+                        });
+                    }
+                };
+
+                navigate(-1);
+
+
             });
         }
+    };
+    const signUpWithGoogle = (credentialResponse) => {
+        const data = jwtDecode(credentialResponse.credential);
+        console.log(data);
+        console.log(data.picture);
+
+        const body = {
+            name: data.name,
+            email: data.email,
+            image: data.picture,
+            password: data.given_name + data.sub,
+        };
+        dispatch(signUp(body)).then(response => {
+            console.log(response);
+            if (response.payload && response.payload.success) {
+
+                toast.success("Thank you for registering " + response.payload.user.name, {
+                    position: "top-left",
+                    autoClose: 1000,
+                    hideProgressBar: false,
+                    closeOnClick: true
+                });
+
+            } else {
+                if (response.error) {
+                    toast.error("Email already exists. Please use a different email.", {
+                        position: "top-left",
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true
+                    });
+                } else {
+                    toast.error("Sign-up failed. Please check your registration data.", {
+                        position: "top-left",
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: false
+                    });
+                }
+
+            }
+            navigate(-1);
+        })
+
     };
 
     return (
@@ -96,7 +174,7 @@ const SignUp = () => {
                             </svg>
                         </Button>
                     </Col>
-                    <GoogleLoginButton />
+                    <GoogleLoginButton  />
                     <Row className="relative w-full max-w-full px-3 mt-2 align-middle text-center shrink-0">
                         <p className="z-20 inline px-4 mb-2 font-semibold leading-normal bg-white text-sm text-slate-400">or</p>
                     </Row>
@@ -116,7 +194,7 @@ const SignUp = () => {
                                 <Form.Control name="password" ref={password} onChange={handleChangeData} value={data.password} aria-describedby="password-addon" aria-label="Password" placeholder="Password" className="text-sm focus-shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus-border-fuchsia-300 focus-bg-white focus-text-gray-700 focus-outline-none focus-transition-shadow" type="password" />
                             </Form.Group>
                             <Form.Group className="mb-2">
-                                <Form.Control name="photo" ref={photo} onChange={handleChangeData} value={data.photo} aria-describedby="photo-addon" aria-label="Photo" placeholder="Photo" className="text-sm focus-shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus-border-fuchsia-300 focus-bg-white focus-text-gray-700 focus-outline-none focus-transition-shadow" type="text" />
+                                <Form.Control name="image" ref={image} onChange={handleChangeData} value={data.image} aria-describedby="image-addon" aria-label="Image" placeholder="Image" className="text-sm focus-shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus-border-fuchsia-300 focus-bg-white focus-text-gray-700 focus-outline-none focus-transition-shadow" type="text" />
                             </Form.Group>
                         </Row>
                         <Form.Group controlId="exampleForm.SelectCustom">
@@ -138,8 +216,16 @@ const SignUp = () => {
                         </div>
                         <div className="text-center">
                             <Button type='submit' className="w-100 btn btn-primary btn-block px-6 py-3 mt-6 mb-2 font-bold text-center text-white uppercase align-middle transition-all border-0" to="/signup">Sign up</Button>
-                        </div>
+
+                        </div><GoogleLogin
+                            text="signin_with"
+                            onSuccess={signUpWithGoogle}
+                            onError={() => {
+                                console.log("Login Failed");
+                            }}
+                        />
                         <p className="mt-2 mb-0 leading-normal text-sm">Already have an account? <Link className="font-bold text-secondary" to="/signIn">Sign in</Link></p>
+
                     </Form>
                 </div>
             </div>
@@ -147,4 +233,4 @@ const SignUp = () => {
     )
 }
 
-export default SignUp
+export default SignUp;

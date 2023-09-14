@@ -15,3 +15,21 @@
     z-index: 1000;
     /* Ajusta el z-index para que esté por encima del contenido del hero */
 }
+
+.navbar-collapse {
+    flex-basis: 100%;
+    flex-grow: 1;
+    display: flex;
+    align-items: start !important;
+    justify-items: start !important;
+}
+
+.btn-check:checked+.btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check)+.btn:active {
+    color:white !important;
+    background-color: hwb(45 21% 30%) !important;
+    border-color: var(--bs-btn-active-border-color);
+}

@@ -1,20 +1,44 @@
 import { useGoogleLogin } from "@react-oauth/google";
 import jwtDecode from "jwt-decode";
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
-const GoogleLoginButton = () => {
-    const login = useGoogleLogin({
+import signUpWithGoogle from '../../pages/SignUp/SignUp.jsx';
+import { GoogleLogin } from "@react-oauth/google";
+import { useGoogleOneTapLogin } from '@react-oauth/google'
 
-        onSuccess: tokenResponse => {
-            console.log(tokenResponse)
-            const infoUser = jwtDecode(credentialResponse.credential)
-            console.log(infoUser)
+const GoogleLoginButton = ({ onClick }) => {
+
+    // Define un estado local para controlar la visibilidad del componente de inicio de sesión de Google One-Tap.
+    const [showGoogleOneTap, setShowGoogleOneTap] = useState(false);
+    // Configura la respuesta exitosa de Google One-Tap Login
+    const login = useGoogleOneTapLogin({
+        onSuccess: async credentialResponse => {
+            console.log(credentialResponse);
+            const data = jwtDecode(credentialResponse.credential);
+            const userData = {
+                email: data.email,
+                password: data.given_name + data.sub,
+            };
+            // Realiza alguna acción personalizada aquí, como iniciar sesión con Google.
+            // Puedes llamar a la función `onClick` para realizar esta acción.
+            if (onClick) {
+                onClick(userData);
+            }
         }
     });
 
+    // Función para manejar el clic en el botón
+    const handleButtonClick = () => {
+        // Muestra el componente de inicio de sesión de Google One-Tap al hacer clic en el botón.
+        setShowGoogleOneTap(true);
+        login;
+
+    };
+
+
     return (
-        <Col onClick={() => login()} className="w-3/12 max-w-full px-1 flex-0 align-middle text-center">
-            <Button className="flex justify-center w-full px-6 py-2 mb-2 font-bold text-center text-gray-200 uppercase align-middle transition-all bg-transparent border border-gray-200 border-solid rounded-lg shadow-none cursor-pointer hover:scale-1.02 leading-pro text-xs ease-soft-in tracking-tight-soft bg-150 bg-x-25 hover:bg-transparent hover-opacity-0.75">
+        <Col className="w-3/12 max-w-full px-1 flex-0 align-middle text-center">
+            <Button onClick={onClick} className="flex justify-center w-full px-6 py-2 mb-2 font-bold text-center text-gray-200 uppercase align-middle transition-all bg-transparent border border-gray-200 border-solid rounded-lg shadow-none cursor-pointer hover:scale-1.02 leading-pro text-xs ease-soft-in tracking-tight-soft bg-150 bg-x-25 hover:bg-transparent hover-opacity-0.75">
                 <svg xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 64 64" height="32px" width="24px">
                     <g fillRule="evenodd" fill="none" strokeWidth="1" stroke="none">
                         <g fillRule="nonzero" transform="translate(3.000000, 2.000000)">
@@ -26,7 +50,11 @@ const GoogleLoginButton = () => {
                     </g>
                 </svg>
             </Button>
+            {/* {showGoogleOneTap && (
+                <GoogleOneTapLoginComponent />)} */}
         </Col>
     )
-};
+}
+
+
 export default GoogleLoginButton;

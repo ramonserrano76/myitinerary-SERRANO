@@ -46,7 +46,7 @@ const CityDetail = () => {
                                 <p className="p d-flex justify-content-center">
                                     {cityData.briefDescription}
                                 </p>
-                                <Button text="Go Back" variant="primary" />
+                                <Button text="Go Back" variant="default" style={{ backgroundColor: '#ad913e' }} />
                                 {/* <Button className="button-instance" divclassName="button-2" text="View Itineraries ↓" variant="default" /> */}
                             </div>
                         </div>

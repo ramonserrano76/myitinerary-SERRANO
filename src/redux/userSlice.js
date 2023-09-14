@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { createAction } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 // Función de utilidad para configurar el encabezado de autorización
 const setAuthHeader = (token) => {
     if (token) {
@@ -25,61 +26,70 @@ export const loadUser = createAction('user/load', (user) => {
 
 export const signUp = createAsyncThunk("user/signUp", async (body) => {
     try {
-        const response = await axios.post(
-            "http://localhost:8090/api/auth/up",
-            body
-        );
-        localStorage.setItem('token', response.data.token)
+        const response = await axios.post('http://localhost:8090/api/auth/up', body)
+        response.data.token && localStorage.setItem('token', response.data.token) && localStorage.setItem('name', response.data.user.name)
         return response.data
     } catch (error) {
-        console.log(error)
+        console.error(error);
+        throw new Error
     }
 })
 
 export const signIn = createAsyncThunk("user/signIn", async (body) => {
     try {
-        const response = await axios.post(
-            "http://localhost:8090/api/auth/in",
-            body
-        );
-
-        localStorage.setItem('token', response.data.token)
-        
+        const response = await axios.post('http://localhost:8090/api/auth/in', body)
+        localStorage.setItem('token', response.data.token) && localStorage.setItem('name', response.data.user.name)
         return response.data
     } catch (error) {
         console.error(error);
         throw error;
     }
-});
+})
 
-export const signInWithToken = createAsyncThunk(
-    "user/signInWithToken",
-    async (  ) => {
-        try {
-            const token = localStorage.getItem("token");
-            if (!token) {
-                throw new Error("Token not found in local storage");
-            }
-            const response = await axios.post("http://localhost:8090/api/auth/token", {},
-                {
-                    headers: { Authorization: `Bearer ${token}` },
-                })
-            return {
-                user: response.data.user,
-                token: token
-            }
-        } catch (error) {
-            console.error(error);
-            throw error;
+export const signInWithToken = createAsyncThunk("user/signInWithToken", async () => {
+    try {
+        const token = localStorage.getItem("token");
+        if (!token) {
+            throw new Error("Token not found in local storage");
         }
+        const response = await axios.post("http://localhost:8090/api/auth/token", {},
+            {
+                headers: { Authorization: `Bearer ${token}` },
+            })
+
+        toast.success('Welcome Again! ' + response.data.user.name, {
+            position: "top-left",
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: true
+        });
+
+        return {
+            user: response.data?.user,
+            token: token
+        }
+    } catch (error) {
+        console.error(error);
+        throw error;
     }
+}
 );
 
 export const logout = createAsyncThunk("user/logout", async () => {
     try {
+        const userName = localStorage.getItem('name')
+        toast.success(`¡Adiós !!`, {
+            position: 'top-left',
+            autoClose: 1000, // 
+            hideProgressBar: false,
+            closeOnClick: false,
+        });
+        console.log(localStorage.getItem('name'));
         localStorage.removeItem("token");
         setAuthHeader(null);
-        return null;
+        return {
+            payload: null
+        }
     } catch (error) {
         console.error(error);
         throw error;
@@ -106,11 +116,13 @@ const userSlice = createSlice({
                 }
             })
             .addCase(signUp.fulfilled, (stateActual, action) => {
+                let userData = {
+                    user: action.payload.user || null,
+                    token: action.payload.token || null
+                }
                 return {
                     ...stateActual,
-                    user: action.payload.user,
-                    token: action.payload.token,
-                    loading: false
+                    ...userData,
                 }
             })
             .addCase(signUp.rejected, (stateActual, action) => {

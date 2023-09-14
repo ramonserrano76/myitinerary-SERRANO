@@ -5,6 +5,10 @@ import { useNavigate } from 'react-router';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import GoogleLoginButton from '../../components/GoogleLoginButton/GoogleLoginButton.jsx';
 import { signIn } from "../../redux/userSlice.js";
+import { GoogleLogin } from '@react-oauth/google';
+import jwtDecode from 'jwt-decode';
+import { toast } from "react-toastify";
+import { ToastContainer } from 'react-toastify';
 
 const SignIn = () => {
 
@@ -13,11 +17,17 @@ const SignIn = () => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const aux = [email, password];
         if (aux.some((campo) => !campo.current.value)) {
-            alert("All fields are required");
+            toast.warning("All fields are required", {
+                position: "top-left",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true
+            });
         } else {
             const body = {
                 email: email.current.value,
@@ -25,12 +35,82 @@ const SignIn = () => {
             };
             dispatch(signIn(body)).then((response) => {
                 console.log(response);
-                if (response.payload.success) {
-                    alert("Welcome " + response.payload.user.name);
+                if (response.payload && response.payload.success) {
+
+                    toast.success(`Welcome,  ${response.payload.user.name}!`, {
+                        position: 'top-left',
+                        autoClose: 3000, // Puedes ajustar la duración como desees.
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                    });
                     navigate(-1);
                 }
-                else { alert("Sign-in failed. Please check your credentials.") };
+                else {
+                    if (response.error) {
+                        toast.error("Sign-in failed. Please check your credentials.", {
+                            position: "top-left",
+                            autoClose: 2000,
+                            hideProgressBar: false,
+                            closeOnClick: true
+                        });
+                    } else {
+                        toast.error("Sign-in failed. Please try login with Google button.", {
+                            position: "top-left",
+                            autoClose: 2000,
+                            hideProgressBar: false,
+                            closeOnClick: true
+                        });
+                    }
+
+                };
             });
+        }
+    };
+    const signInWithGoogle = (credentialResponse) => {
+        try {
+            const userData = jwtDecode(credentialResponse.credential);
+            const body = {
+                email: userData.email,
+                password: userData.given_name + userData.sub,
+            };
+            dispatch(signIn(body)).then((respuestaDelAction) => {
+                console.log(respuestaDelAction);
+                navigate(-1)
+                if (respuestaDelAction.payload && respuestaDelAction.payload.success) {
+
+                    toast.success(`Welcome,  ${respuestaDelAction.payload.user.name}!`, {
+                        position: 'top-left',
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: false,
+                    });
+                    navigate(-1);
+                } else {
+                    if (response.error) {
+                        toast.error("Sign-in failed. Please check your credentials.", {
+                            position: "top-left",
+                            autoClose: 2000,
+                            hideProgressBar: false,
+                            closeOnClick: false
+                        });
+                    } else {
+                        toast.error("Sign-in failed. Please try login with Google button.", {
+                            position: "top-left",
+                            autoClose: 2000,
+                            hideProgressBar: false,
+                            closeOnClick: false
+                        });
+                    }
+                };
+                // navigate(-1);
+            });
+        } catch (error) {
+            console.error(error); // Esto mostrará el error en la consola
+            // Puedes acceder al mensaje de error y al código de estado de la siguiente manera:
+            if (error.response) {
+                console.error("Código de estado:", error.response.status);
+                console.error("Mensaje de error:", error.response.data);
+            }
         }
     };
     return (
@@ -64,7 +144,7 @@ const SignIn = () => {
                                 </svg>
                             </Button>
                         </Col>
-                        <GoogleLoginButton />
+                        <GoogleLoginButton  />
                         <Row className="relative w-full max-w-full px-3 mt-2 text-center shrink-0">
                             <p className="z-20 inline px-4 mb-2 font-weight-bold leading-normal bg-white text-sm text-slate-400">or</p>
                         </Row>
@@ -99,7 +179,15 @@ const SignIn = () => {
                                     Sign in
                                 </Button>
                             </div>
+                            <GoogleLogin
+                                text="signin_with"
+                                onSuccess={signInWithGoogle}
+                                onError={() => {
+                                    console.log("Login Failed");
+                                }}
+                            />
                             <p className="mt-4 mb-0 leading-normal text-sm">Don't have an account? <Link className="font-weight-bold text-secondary" to="/signup">Sign up</Link></p>
+
                         </Form>
                     </div>
                 </div>

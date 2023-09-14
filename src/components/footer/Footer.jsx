@@ -68,16 +68,16 @@ const Footer = () => {
                                 <ul className="list-unstyled align-items-center justify-content-center p-0 m-0">
                                     <li className='p-0 m-0'><a className='text-white' href="/">Home</a></li>
                                     <li className='p-0 m-0'><a className='text-white' href="/cities">Cities</a></li>
-                                    <li className='p-0 m-0'><a className='text-white' href="/feature">Feature1</a></li>
+                                    <li className='p-0 m-0'><a className='text-white' href="/feature">About</a></li>
                                 </ul>
                             </div>
-                            <div className="col align-items-center justify-content-center p-0 m-0">
+                            {/* <div className="col align-items-center justify-content-center p-0 m-0">
                                 <ul className="list-unstyled align-items-center justify-content-center p-0 m-0">
                                     <li className='p-0 m-0'><a className='text-white' href="/feature2">Feature2</a></li>
                                     <li className='p-0 m-0'><a className='text-white' href="/feature3">Feature3</a></li>
                                     <li className='p-0 m-0'><a className='text-white' href="/about">About</a></li>
                                 </ul>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                     <div className="col-md-4 p-0 m-0">
