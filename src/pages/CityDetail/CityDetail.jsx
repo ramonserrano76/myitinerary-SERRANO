@@ -4,23 +4,19 @@ import { Link, useParams } from 'react-router-dom';
 import { fetchCityDetail } from '../../redux/citySlice.js';
 import './CityDetail.css';
 import Accordion from 'react-bootstrap/Accordion';
-import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import Frame from "../../components/frame/Frame.jsx";
-import Button from "../../components/button/Button.jsx";
-
-// const SocketContext = createContext();
+import Frame from '../../components/frame/Frame.jsx';
+import Button from '../../components/button/Button.jsx';
 
 const CityDetail = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
     const { cityData, loading, error } = useSelector((state) => state.cities);
-    // const socket = useContext(SocketContext);
+
     console.log('cityData:', cityData);
+
     useEffect(() => {
-        // Dispatch de la acción para cargar los datos de la ciudad por su ID
         dispatch(fetchCityDetail(id));
     }, [dispatch, id]);
-
 
     if (loading) {
         return <p>Loading...</p>;
@@ -35,7 +31,6 @@ const CityDetail = () => {
     }
 
     return (
-
         <>
             <div className="citydetail-con">
                 <div className="div-2">
@@ -47,7 +42,6 @@ const CityDetail = () => {
                                     {cityData.briefDescription}
                                 </p>
                                 <Button text="Go Back" variant="default" style={{ backgroundColor: '#ad913e' }} />
-                                {/* <Button className="button-instance" divclassName="button-2" text="View Itineraries ↓" variant="default" /> */}
                             </div>
                         </div>
                     </div>
@@ -58,7 +52,7 @@ const CityDetail = () => {
                     {cityData && cityData.itineraries && cityData.itineraries.map((itinerary) => (
                         <Accordion.Item key={itinerary._id} eventKey={itinerary._id}>
                             <Accordion.Header>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-check-circle" viewBox="0 0 16 16">
                                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                                     <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
                                 </svg> {'  '} {itinerary.name}
@@ -73,7 +67,7 @@ const CityDetail = () => {
                                                     <img className="haze-globe" src="https://s3-alpha-sig.figma.com/img/40e8/af22/6680fab018e33727f841a658c73bb356?Expires=1694995200&Signature=mzwLM1~M39lYkAKH64mKvIGEk91rh9b-lk1q4ZbA8T6LkBN0NPaWb3mfNDJmJAkNKy6JSA1RVcG2I0j8I348IAJSKklTOAPCqZoXBoWqYObMlN-3hpmStuwzfOxDstNHbLNjxdYS-nYxGtDHzYXQ1YCuQI2rjrTJfjZXHTxPqFcUgchAROelbkE8-jcRWwiPF32hwoMv2t1q93WfuCxnWqDj8UBScgbAcks4zDbIinA~PygeTTzBRNmq8GcxSE~f9u9FZqot-R8LXvogYM0qy20Yb-2k-d20LaM1~uJiKr3OUKTgo7Tmq9UqvYYJRYtxyG~xmIx8xvMv6WX7xh8aHg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="Currency" />
                                                     <div className="div">Currency: USD</div>
                                                 </div>
-                                                <div className="card" style={{ background: 'radial-gradient(50% 50% at 50% 50%, rgb(165, 148, 249) 0%, rgb(98, 71, 170) 100%)' }} >
+                                                <div className="card" style={{ background: 'radial-gradient(50% 50% at 50% 50%, rgb(165, 148, 249) 0%, rgb(98, 71, 170) 100%)' }}>
                                                     <img className="haze-globe" alt="Haze globe" src="https://s3-alpha-sig.figma.com/img/a9fb/5400/1164022845917163cc8bc3b495b8ddf6?Expires=1694995200&Signature=ES1nz4UI1~SediNjfCXHGHoCjGnboLqKPDjJfD8ytDl3ieIriQsHMpg6kfcAzilrCCfF4AJiBAr2zdqIjAbWoISA66auox5~hsaj3TU1rRcOlB0hErJqPmr9vbGzPS2LIN3mcdKRkr4Y1jCkR-9DRXIOISPq1StbROYXq0Dn0tSLXDLRVYF828zD~kwWa1f2tanhBqLQMlFGT8TAyA6LUSFB7WxgBgbSXgn2NF5hO0L5shhp2Y08N3a5VHRf6u6mBnkSI1aGJVXn2DHkKRvfPoP5ewsKc5S~wBBz~6h~ly2rKdRisIuttvWWOlxh~OEsKdZZxpsNvhyB-xOg-k7CLw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
                                                     <div className="div">Country: {cityData.title}</div>
                                                 </div>
@@ -95,7 +89,6 @@ const CityDetail = () => {
                                                     <div className="text-wrapper-6">{activity.likes}</div>
                                                 </div>
                                             </div>
-
                                             <div className="row-2">
                                                 <div className="div-3">
                                                     <div className="text-wrapper-7">User:</div>
@@ -117,7 +110,6 @@ const CityDetail = () => {
                                                     <div className="text-wrapper-8">{activity.price}</div>
                                                 </div>
                                             </div>
-
                                             <div className="comments">
                                                 <div className="text-wrapper-10">Coments</div>
                                                 <div className="div-wrapper">
@@ -131,7 +123,6 @@ const CityDetail = () => {
                                                 </div>
                                                 <div className="frame-6">
                                                     <img className="ellipse-2" alt="Ellipse" src="https://s3-alpha-sig.figma.com/img/f5d1/c2d1/2f72cc0c526bbe4b0e7aae7a9b3e5e23?Expires=1694995200&Signature=NElcwkT96d4wo4K1GL3Gx9IHT2swoNx6S~ReJEPsdBzH0xOUIaSn7QPgC-B~MaHtcz6Ll0zIfpGFMXjWA2L-VNfCkCdzXFMyPL80hzNu9YCecziqYZxQVIXSzAQt6h7Xjx3HvizpK7v6WWBYQ2V7ovAApKRgC84b7BOf7HB7XP8qw17Irr5~PsaF4PJrUXSHLWeyGI-YsVbJy07JkawVLHZ5vR-IGP-CiLzvMopu15M7DNkJH72od2w0nQHoZowmjy8U8W7ZOmDgTP0KQwFmIe-QsZN1L9ep8T6eQz-ilIJ9HGmyVvEhQ9Y-FLMOW-XwYSmRpAiMfVoVC7p0Viumig__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
-
                                                 </div>
                                                 <div className="col">
                                                     <div className="row-4">
@@ -147,30 +138,19 @@ const CityDetail = () => {
                                                             rutrum felis. Ut consequat volutpat est et porttitor. Sed ac dui laoreet, dignissim purus a, sollicitudin
                                                             ex. Nunc ac ante quis metus viverra ullamcorper eu non nisi. Duis ultrices tempor tincidunt...
                                                         </p>
-
                                                     </div>
-
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
-
                                 ))}
                             </Accordion.Body>
                         </Accordion.Item>
                     ))}
                 </Accordion>
-            </div >
-
+            </div>
         </>
-
-
-
     );
 };
-
-
-
 
 export default CityDetail;
