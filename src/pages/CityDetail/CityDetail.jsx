@@ -1,6 +1,6 @@
-import React, { useEffect, useContext, createContext } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { fetchCityDetail } from '../../redux/citySlice.js';
 import './CityDetail.css';
 import Accordion from 'react-bootstrap/Accordion';
