@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const citiesQueries = axios.create({
-    baseURL: 'http://localhost:8090/api/cities/',
+    baseURL: 'https://back-mytinerary-09o3.onrender.com/api/cities/',
 })
 
 export const read = async (queryParams = "") => {
