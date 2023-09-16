@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchCityDetail } from '../../redux/citySlice.js';
-import './CityDetail.css';
+import './cityDetail.css';
 import Accordion from 'react-bootstrap/Accordion';
 import Frame from '../../components/frame/Frame.jsx';
 import Button from '../../components/button/Button.jsx';
