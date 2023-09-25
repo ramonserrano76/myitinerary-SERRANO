@@ -26,7 +26,7 @@ export const loadUser = createAction('user/load', (user) => {
 
 export const signUp = createAsyncThunk("user/signUp", async (body) => {
     try {
-        const response = await axios.post('https://back-mytinerary-09o3.onrender.com/api/auth/up', body)
+        const response = await axios.post('/api/auth/up', body)
         response.data.token && localStorage.setItem('token', response.data.token) && localStorage.setItem('name', response.data.user.name)
         return response.data
     } catch (error) {
@@ -37,7 +37,7 @@ export const signUp = createAsyncThunk("user/signUp", async (body) => {
 
 export const signIn = createAsyncThunk("user/signIn", async (body) => {
     try {
-        const response = await axios.post('https://back-mytinerary-09o3.onrender.com/api/auth/in', body)
+        const response = await axios.post('/api/auth/in', body)
         localStorage.setItem('token', response.data.token) && localStorage.setItem('name', response.data.user.name)
         return response.data
     } catch (error) {
@@ -52,7 +52,7 @@ export const signInWithToken = createAsyncThunk("user/signInWithToken", async ()
         if (!token) {
             throw new Error("Token not found in local storage");
         }
-        const response = await axios.post("https://back-mytinerary-09o3.onrender.com/api/auth/token", {},
+        const response = await axios.post("/api/auth/token", {},
             {
                 headers: { Authorization: `Bearer ${token}` },
             })
